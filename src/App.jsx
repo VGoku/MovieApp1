@@ -1,13 +1,31 @@
 import { useState } from 'react'
 import './App.css'
+import MovieList from './components/MovieList'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello all</h1>
-    </>
+    <div className={`App ${darkMode ? 'dark' : ''}`}>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <header className="App-header">
+        <h1>Movie App</h1>
+        <input
+          type="text"
+          placeholder="Search movies..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-bar"
+        />
+      </header>
+      <main>
+        <MovieList searchTerm={searchTerm} />
+      </main>
+      <Footer />
+    </div>
   )
 }
 

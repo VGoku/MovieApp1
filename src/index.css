@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-gray-100;
+}
+
+body.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.App-header {
+  @apply bg-blue-600 p-4 text-white text-center;
+}
+
+.search-bar {
+  @apply mt-4 p-2 w-1/2 rounded border border-gray-300 text-black;
+}
+
+body.dark .search-bar {
+  @apply text-white bg-gray-700 border-gray-600;
+}
+
+.movie-list {
+  @apply flex flex-wrap justify-center p-4;
+}
+
+.movie {
+  @apply bg-white border border-gray-200 rounded m-4 p-4 w-64 text-center shadow-lg cursor-pointer;
+}
+
+body.dark .movie {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.App-footer {
+  @apply bg-blue-600 p-4 text-white text-center mt-4;
+}
+
+.modal {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center;
+}
+
+.modal-content {
+  @apply bg-white p-4 rounded shadow-lg relative;
+}
+
+body.dark .modal-content {
+  @apply bg-gray-800 text-white;
+}
+
+.close {
+  @apply absolute top-2 right-2 text-black cursor-pointer;
+}
+
+body.dark .close {
+  @apply text-white;
+}
+
+.navbar {
+  @apply bg-blue-600 p-4 text-white flex justify-between items-center;
+}
+
+.dark-mode-toggle {
+  @apply bg-gray-200 text-black p-2 rounded;
+}
+
+body.dark .dark-mode-toggle {
+  @apply bg-gray-700 text-white;
+}
