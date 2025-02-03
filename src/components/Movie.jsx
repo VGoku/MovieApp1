@@ -7,9 +7,9 @@ function Movie({ movie }) {
 
   return (
     <div className="movie" onClick={() => setShowModal(true)}>
-      <h2>{movie.title}</h2>
-      <p>{movie.year}</p>
-      <p>Rating: {movie.rating}/10</p>
+      <img src={movie.Poster} alt={movie.Title} />
+      <h2>{movie.Title}</h2>
+      <p>{movie.Year}</p>
       {showModal && (
         <MovieDetailsModal movie={movie} onClose={() => setShowModal(false)} />
       )}
@@ -19,9 +19,10 @@ function Movie({ movie }) {
 
 Movie.propTypes = {
   movie: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired,
+    imdbID: PropTypes.string.isRequired,
+    Title: PropTypes.string.isRequired,
+    Year: PropTypes.string.isRequired,
+    Poster: PropTypes.string,
   }).isRequired,
 }
 

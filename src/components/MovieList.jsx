@@ -1,23 +1,25 @@
+import PropTypes from 'prop-types'
 import Movie from './Movie'
 
-const movies = [
-  { id: 1, title: 'Inception', year: 2010, rating: 8.8 },
-  { id: 2, title: 'Interstellar', year: 2014, rating: 8.6 },
-  { id: 3, title: 'Dunkirk', year: 2017, rating: 7.9 },
-]
-
-function MovieList({ searchTerm }) {
-  const filteredMovies = movies.filter(movie =>
-    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-  )
-
+function MovieList({ movies }) {
   return (
     <div className="movie-list">
-      {filteredMovies.map(movie => (
-        <Movie key={movie.id} movie={movie} />
+      {movies.map(movie => (
+        <Movie key={movie.imdbID} movie={movie} />
       ))}
     </div>
   )
+}
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      imdbID: PropTypes.string.isRequired,
+      Title: PropTypes.string.isRequired,
+      Year: PropTypes.string.isRequired,
+      Poster: PropTypes.string,
+    })
+  ).isRequired,
 }
 
 export default MovieList

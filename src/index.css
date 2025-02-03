@@ -69,3 +69,19 @@ body.dark .close {
 body.dark .dark-mode-toggle {
   @apply bg-gray-700 text-white;
 }
+
+.loading-spinner {
+  @apply text-center text-xl;
+}
+
+.pagination {
+  @apply flex justify-center items-center mt-4;
+}
+
+.pagination-button {
+  @apply bg-blue-600 text-white px-4 py-2 rounded mx-2;
+}
+
+.pagination-info {
+  @apply text-lg;
+}
